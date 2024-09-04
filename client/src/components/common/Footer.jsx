@@ -22,7 +22,7 @@ const Footer = () => {
 
         {/* Slogan and Contact */}
         <p className="mb-4">
-          divyanirdhar is the best news website. It provides news from many
+          BLB 24 News is the best news website. It provides news from many
           areas.
         </p>
         <p className="mb-4">
@@ -31,7 +31,7 @@ const Footer = () => {
             href="mailto:divyanirdhar@gmail.com"
             className="text-red-600 hover:underline"
           >
-            divyanirdhar@gmail.com
+            blbnews@gmail.com
           </a>
         </p>
 
@@ -116,9 +116,9 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="text-red-600 hover:underline"
         >
-          Newsreach
+          Made
         </a>{" "}
-        @2024 - divyanirdhar.com
+        @2024 - I Next Ets
       </div>
     </footer>
   );
