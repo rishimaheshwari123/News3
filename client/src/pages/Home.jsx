@@ -12,7 +12,7 @@ function Home() {
       <AddSlideBar />
       <CategoryWise />
       <ButtomAdd />
-      <PolllAns />
+      {/* <PolllAns /> */}
     </div>
   );
 }

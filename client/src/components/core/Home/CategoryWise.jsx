@@ -270,6 +270,118 @@ function CategoryWise() {
           </div>
         </div>
       </div>
+      <div className="grid lg:grid-cols-4 gap-6 p-6 bg-black">
+        <div className="col-span-1">
+          <h2 className="text-xl font-semibold mb-4 text-red-700">
+            हाल के पोस्ट
+          </h2>
+          {all.map((news) => {
+            if (news?.type === "top-news") {
+              return (
+                <Link
+                  to={`/${news?.slug}`}
+                  key={news._id}
+                  className="flex mb-4 p-3 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:bg-white transition"
+                >
+                  <img
+                    src={news?.images[0]?.url}
+                    alt={news?.title || "News Image"}
+                    className="h-[65px] w-[110px] object-cover rounded-lg"
+                  />
+                  <div className="ml-3 flex-1">
+                    <p className="font-semibold text-sm text-red-800">
+                      {truncateText(news?.title, 20)}
+                    </p>
+                    <p className="text-gray-500 text-xs">
+                      {formatDate(news?.createdAt)}
+                    </p>
+                  </div>
+                </Link>
+              );
+            }
+            return null;
+          })}
+        </div>
+
+        <div className="col-span-1">
+          <h2 className="text-xl font-semibold mb-4 text-red-700">
+            महाराष्ट्र
+          </h2>
+          {maharastra.map((news) => (
+            <Link
+              to={`/${news?.slug}`}
+              key={news._id}
+              className="flex mb-4 p-3 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:bg-white transition"
+            >
+              <img
+                src={news?.images[0]?.url}
+                alt={news?.title || "News Image"}
+                className="h-[65px] w-[110px] object-cover rounded-lg"
+              />
+              <div className="ml-3 flex-1">
+                <p className="font-semibold text-sm text-red-700">
+                  {truncateText(news?.title, 20)}
+                </p>
+                <p className="text-gray-500 text-xs">
+                  {formatDate(news?.createdAt)}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="col-span-1">
+          <h2 className="text-xl font-semibold mb-4 text-red-700">खेल</h2>
+          {khel.map((news) => (
+            <Link
+              to={`/${news?.slug}`}
+              key={news._id}
+              className="flex mb-4 p-3 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:bg-white transition"
+            >
+              <img
+                src={news?.images[0]?.url}
+                alt={news?.title || "News Image"}
+                className="h-[65px] w-[110px] object-cover rounded-lg"
+              />
+              <div className="ml-3 flex-1">
+                <p className="font-semibold text-sm text-red-700">
+                  {truncateText(news?.title, 20)}
+                </p>
+                <p className="text-gray-500 text-xs">
+                  {formatDate(news?.createdAt)}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="col-span-1">
+          <h2 className="text-xl font-semibold mb-4 text-red-700">
+            अंतर्राष्ट्रीय
+          </h2>
+          {internation.map((news) => (
+            <Link
+              to={`/${news?.slug}`}
+              key={news._id}
+              className="flex mb-4 p-3 border border-gray-300 rounded-lg shadow-sm hover:shadow-md hover:bg-white transition"
+            >
+              <img
+                src={news?.images[0]?.url}
+                alt={news?.title || "News Image"}
+                className="h-[65px] w-[110px] object-cover rounded-lg"
+              />
+              <div className="ml-3 flex-1">
+                <p className="font-semibold text-sm text-red-700">
+                  {truncateText(news?.title, 20)}
+                </p>
+                <p className="text-gray-500 text-xs">
+                  {formatDate(news?.createdAt)}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

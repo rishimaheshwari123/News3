@@ -22,14 +22,31 @@ function SingleNews() {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
-  const dharm = allNews
-    .filter((news) => news?.category?._id === "66bdc954433ab78f130e4a0b")
+  const maharastra = allNews
+    .filter((news) => news?.category?._id === "66d7f9cfdeb67bcc49075966")
     .sort((a, b) => new Date(b.publish) - new Date(a.publish))
-    .slice(0, 9);
-  const vyapar = allNews
-    .filter((news) => news?.category?._id === "66bdc944433ab78f130e4a02")
+    .slice(0, 2);
+  const internation = allNews
+    .filter((news) => news?.category?._id === "66d7fa00deb67bcc4907596e")
     .sort((a, b) => new Date(b.publish) - new Date(a.publish))
-    .slice(0, 9);
+    .slice(0, 2);
+  const gunha = allNews
+    .filter((news) => news?.category?._id === "66d7fa11deb67bcc49075976")
+    .sort((a, b) => new Date(b.publish) - new Date(a.publish))
+    .slice(0, 2);
+
+  const rajki = allNews
+    .filter((news) => news?.category?._id === "66d7fa08deb67bcc49075972")
+    .sort((a, b) => new Date(b.publish) - new Date(a.publish))
+    .slice(0, 2);
+  const karmannu = allNews
+    .filter((news) => news?.category?._id === "66d7fa18deb67bcc4907597a")
+    .sort((a, b) => new Date(b.publish) - new Date(a.publish))
+    .slice(0, 2);
+  const khel = allNews
+    .filter((news) => news?.category?._id === "66d7fa20deb67bcc4907597e")
+    .sort((a, b) => new Date(b.publish) - new Date(a.publish))
+    .slice(0, 2);
 
   const truncateText = (text, wordLimit) => {
     const words = text.split(" ");
@@ -120,7 +137,6 @@ function SingleNews() {
               </a>
             </div>
           </div>
-
           {/* Main Image and Description */}
           <div className="my-8">
             {/* First Image */}
@@ -143,8 +159,7 @@ function SingleNews() {
               ></span>
             </div>
           </div>
-
-          {/* Additional Images */}
+          Additional Images
           {news?.images?.slice(1).length > 0 && (
             <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               {news.images.slice(1).map((imge, index) => (
@@ -157,13 +172,11 @@ function SingleNews() {
               ))}
             </div>
           )}
-
           <Contact />
         </div>
 
         {/* Sidebar */}
         <div className=" lg:w-[30%]">
-          <NewsActive realted={allNews} />
           <div className="mt-[50px]">
             <div className=" flex justify-between mb-4 relative">
               <p className=" min-w-full min-h-[2px] bg-[#ed0302] absolute bottom-0 "></p>
@@ -183,13 +196,71 @@ function SingleNews() {
               <div className=" flex justify-between mb-4 relative">
                 <p className=" min-w-full min-h-[2px] bg-[#ed0302] absolute bottom-0 "></p>
                 <p className=" flex items-center gap-2 font-bold text-lg bg-[#ed0302] text-white p-2 relative wf">
-                  धर्म एवं ज्योतिष
+                  महाराष्ट्र
                 </p>
               </div>
 
               <div>
                 <div className="flex gap-3 grid-cols-1  mt-8 p-2 flex-col">
-                  {dharm?.map((currElem, index) => (
+                  {maharastra?.map((currElem, index) => (
+                    <Link to={`/${currElem?.slug}`} key={currElem._id}>
+                      <div className="flex gap-3">
+                        <img
+                          src={currElem?.images[0]?.url}
+                          alt=""
+                          className="w-[105px]"
+                        />
+                        <p className="text-wrap mt-2 text-sm">
+                          {truncateText(currElem.title, 10)}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="mt-[50px]">
+              <div className=" flex justify-between mb-4 relative">
+                <p className=" min-w-full min-h-[2px] bg-[#ed0302] absolute bottom-0 "></p>
+                <p className=" flex items-center gap-2 font-bold text-lg bg-[#ed0302] text-white p-2 relative wf">
+                  आंतरराष्ट्रीय
+                </p>
+              </div>
+
+              <div>
+                <div className="flex gap-3 grid-cols-1  mt-8 p-2 flex-col">
+                  {internation?.map((currElem, index) => (
+                    <Link to={`/${currElem?.slug}`} key={currElem._id}>
+                      <div className="flex gap-3">
+                        <img
+                          src={currElem?.images[0]?.url}
+                          alt=""
+                          className="w-[105px]"
+                        />
+                        <p className="text-wrap mt-2 text-sm">
+                          {truncateText(currElem.title, 10)}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="mt-[50px]">
+              <div className=" flex justify-between mb-4 relative">
+                <p className=" min-w-full min-h-[2px] bg-[#ed0302] absolute bottom-0 "></p>
+                <p className=" flex items-center gap-2 font-bold text-lg bg-[#ed0302] text-white p-2 relative wf">
+                  गुन्हा
+                </p>
+              </div>
+
+              <div>
+                <div className="flex gap-3 grid-cols-1  mt-8 p-2 flex-col">
+                  {gunha?.map((currElem, index) => (
                     <Link to={`/${currElem?.slug}`} key={currElem._id}>
                       <div className="flex gap-3">
                         <img
