@@ -8,7 +8,7 @@ import {
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa";
-
+import logo from "../../assests/logo.jpg";
 const Footer = () => {
   const { token } = useSelector((state) => state.auth);
 
@@ -17,11 +17,7 @@ const Footer = () => {
       <div className="container mx-auto py-8 text-center">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <img
-            src="https://divyanirdhar.com/wp-content/uploads/2021/05/logo-WEB_01-1024x198.png"
-            alt="Logo"
-            className="h-16 bg-white"
-          />
+          <img src={logo} alt="Logo" className="h-16 bg-white" />
         </div>
 
         {/* Slogan and Contact */}
@@ -96,6 +92,17 @@ const Footer = () => {
             <Link to="/disclaimer" className="hover:underline">
               Disclaimer
             </Link>
+            <span>|</span>
+
+            {token ? (
+              <Link to="/admin/dashboard" className="hover:underline">
+                Admin Login
+              </Link>
+            ) : (
+              <Link to="/login" className="hover:underline">
+                Admin Login
+              </Link>
+            )}
           </div>
         </div>
       </div>
