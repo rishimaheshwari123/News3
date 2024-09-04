@@ -10,6 +10,8 @@ function Home() {
     <div className=" max-w-9xl p-4 lg:px-10 mx-auto">
       <LatestNews />
       <AddSlideBar />
+      <br />
+      <br />
       <CategoryWise />
       <ButtomAdd />
       {/* <PolllAns /> */}

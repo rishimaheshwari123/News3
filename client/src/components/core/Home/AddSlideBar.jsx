@@ -32,11 +32,15 @@ const AddSlideBar = () => {
             (currElem, index) =>
               currElem?.type === "top-add" && (
                 <SwiperSlide key={index}>
-                  <Link to={currElem?.url} target="_blank">
+                  <Link
+                    to={currElem?.url}
+                    className="w-full h-52"
+                    target="_blank"
+                  >
                     <img
                       src={currElem?.image}
                       alt="not found"
-                      className="w-full"
+                      className="w-full h-56 object-cover"
                     />
                   </Link>
                 </SwiperSlide>

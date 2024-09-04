@@ -4,17 +4,17 @@ import { useSelector } from "react-redux";
 import {
   FaFacebookF,
   FaTwitter,
-  FaInstagram,
   FaEnvelope,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
 import logo from "../../assests/logo.jpg";
 const Footer = () => {
   const { token } = useSelector((state) => state.auth);
 
   return (
-    <footer className="bg-black text-white">
-      <div className="container mx-auto py-8 text-center">
+    <footer className="bg-black text-white ">
+      <div className="container mx-auto p-5 text-center">
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img src={logo} alt="Logo" className="h-16 bg-white" />
@@ -38,7 +38,7 @@ const Footer = () => {
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-4 mb-8">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/BLB24NEWS?mibextid=ZbWKwL"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600"
@@ -46,12 +46,12 @@ const Footer = () => {
             <FaFacebookF size={24} />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://www.youtube.com/@BLBNEWS24"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400"
           >
-            <FaTwitter size={24} />
+            <FaYoutube size={24} />
           </a>
           <a
             href="https://instagram.com"
@@ -59,13 +59,16 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-pink-600"
           >
-            <FaInstagram size={24} />
+            <FaTwitter size={24} />
           </a>
-          <a href="mailto:someone@example.com" className="text-blue-500">
+          <a
+            href="mailto:Brotherlivebharatpur@gmail.com"
+            className="text-blue-500"
+          >
             <FaEnvelope size={24} />
           </a>
           <a
-            href="https://wa.me/your-number"
+            href="https://wa.me/+918005922946"
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-500"
@@ -109,16 +112,17 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="bg-black text-white text-center py-2 text-xs border-t border-gray-700">
-        All Right Reserved. Designed and Developed by{" "}
+        All Right Reserved. Designed and Developed by <br />
+        <br />
         <a
-          href="https://newsreach.in"
+          href="https://inextets.online"
           target="_blank"
           rel="noopener noreferrer"
           className="text-red-600 hover:underline"
         >
           Made
         </a>{" "}
-        @2024 - I Next Ets
+        by - I Next Ets
       </div>
     </footer>
   );
