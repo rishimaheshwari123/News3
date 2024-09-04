@@ -120,7 +120,7 @@ export async function login(email, password, navigate, dispatch) {
     });
     dispatch(setToken(response?.data?.token));
     dispatch(setUser(response.data.user));
-    // navigate("/admin/dashboard");
+    navigate("/admin/dashboard");
   } catch (error) {
     console.log("LOGIN API ERROR............", error);
     Swal.fire({
@@ -557,10 +557,10 @@ export const deleteCategory = async (id, token) => {
   }
 };
 
-export const fetchSingleCategory = async (id,page,itemsPerPage) => {
+export const fetchSingleCategory = async (id, page, itemsPerPage) => {
   let result = [];
   try {
-    const response = await apiConnector("GET", `${DETAILS_CATEGORY_API}/${id}`,null,null,{ page, limit: itemsPerPage });
+    const response = await apiConnector("GET", `${DETAILS_CATEGORY_API}/${id}`, null, null, { page, limit: itemsPerPage });
     // console.log("News_CATEGORIES_API API RESPONSE............", response?.data);
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch  Categories");
@@ -717,12 +717,12 @@ export const deleteSubCategory = async (id, token) => {
   }
 };
 
-export const fetchSingleSubCategory = async (id,page,itemsPerPage) => {
+export const fetchSingleSubCategory = async (id, page, itemsPerPage) => {
   let result = [];
   try {
     const response = await apiConnector(
       "GET",
-      `${DETAILS_SUBCATEGORY_API}/${id}`,null,null,{ page, limit: itemsPerPage }
+      `${DETAILS_SUBCATEGORY_API}/${id}`, null, null, { page, limit: itemsPerPage }
     );
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch SubCategory Details");

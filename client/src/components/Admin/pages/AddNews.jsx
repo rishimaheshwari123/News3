@@ -201,8 +201,8 @@ function AddNews() {
       await createNews(formData, token);
     }
 
-    resetForm();
-    setEditorHtml(""); // Clear the ReactQuill editor
+    // resetForm();
+    // setEditorHtml(""); // Clear the ReactQuill editor
     setImages([]); // Clear uploaded images
   };
 

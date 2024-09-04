@@ -7,9 +7,9 @@ import ButtomAdd from "../components/core/Home/ButtomAdd";
 
 function Home() {
   return (
-    <div className=" max-w-7xl p-4 mx-auto">
-      <AddSlideBar />
+    <div className=" max-w-9xl p-4 lg:px-10 mx-auto">
       <LatestNews />
+      <AddSlideBar />
       <CategoryWise />
       <ButtomAdd />
       <PolllAns />
